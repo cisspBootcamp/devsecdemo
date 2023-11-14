@@ -5,7 +5,7 @@ $bdd = mysqli_connect("localhost","root","","eoctf20") or die("Not connected MYS
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>CISSP BootCamp</title>
+<title>CISSPBootCamp</title>
 <style type="text/css">
 div#container
 {
