@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\.github",
+    "\\.github\\workflows"
   ],
-  "SelectedNode": "\\C:\\Users\\User\\Source\\Repos\\devsecdemo",
+  "SelectedNode": "\\.github\\workflows\\main.yml",
   "PreviewInSolutionExplorer": false
 }

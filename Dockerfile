@@ -19,7 +19,7 @@ EXPOSE 80
 EXPOSE 3306
 
 # Copiez le site web dans le répertoire Apache2
-COPY . /var/www/html
+COPY website /var/www/html
 
 # Démarrez les services Apache2 et MySQL au démarrage du conteneur
 CMD service apache2 start && service mysql start && tail -f /dev/null     

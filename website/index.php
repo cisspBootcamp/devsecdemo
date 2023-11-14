@@ -1,5 +1,5 @@
 <?php 
-$bdd = mysqli_connect("localhost","root","","eoctf20") or die("Not connected MYSQL");
+$bdd = mysqli_connect("localhost","root","","demobd") or die("Not connected MYSQL");
 ?>
 
 <html>
@@ -64,7 +64,7 @@ echo $query;
 $sonuc = mysqli_query($bdd,$query); 
 $result = mysqli_fetch_array($sonuc);
 if($result){
-	echo "<font style='font-size:13px; position:absolute;left:10px;top:159px;width:411px;height:16px;text-align:left;z-index:6;' color='#000000' face='Arial'>Console&gt;_ <b>operation : </b>". $result['operation']."<br> Console&gt;_  <b>flag 15 : </b>". $result['password'] . "<br></font>" ;
+	echo "<font style='font-size:13px; position:absolute;left:10px;top:159px;width:411px;height:16px;text-align:left;z-index:6;' color='#000000' face='Arial'>Console&gt;_ <b>operation : </b>". $result['operation']."<br> Console&gt;_  <b>Code : </b>". $result['password'] . "<br></font>" ;
 
 }else{
 	echo '<font style="font-size:13px; position:absolute;left:10px;top:159px;width:411px;height:16px;text-align:left;z-index:6;" color="#000000" face="Arial">Console&gt;_ NOT CONNECTED - PAS DE CONNEXION </font>' ;

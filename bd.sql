@@ -6,21 +6,30 @@
 -- Généré le :  jeu. 20 août 2020 à 14:14
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
+-- Création de la base de données
+CREATE DATABASE IF NOT EXISTS demobd;
 
+-- Utilisation de la base de données nouvellement créée
+USE demobd;
 
-CREATE TABLE `flag_secret` (
+-- Création d'une table
+
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `flag_name` varchar(15) NOT NULL,
-  `flag` varchar(256) NOT NULL
+  `nom` varchar(15) NOT NULL,
+  `code` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `flag_secret`
+-- Déchargement des données de la table `users`
 --
 
-INSERT INTO `flag_secret` (`id`, `flag_name`, `flag`) VALUES
-(4, 'Flag16', '1640c583da85e34831e53d1b3063f163ef985ebb'),
-(5, 'Flag17', '89 94 3a 6c ac 24 c8 39');
+INSERT INTO `users` (`id`, `nom`, `code`) VALUES
+(1, 'Nathalie', 'CN470058'),
+(2, 'Jane Smith', 'SR58741'),
+(3, 'Bob Johnson', 'OH478N23'),
+(4, 'John Doe', 'CX845Y42'),
+(5, 'Frederic', 'FD854025');
 
 -- --------------------------------------------------------
 
@@ -49,11 +58,11 @@ INSERT INTO `ops` (`id`, `operation`, `password`, `email`) VALUES
 
 
 --
--- Index pour la table `flag_secret`
+-- Index pour la table `users`
 --
-ALTER TABLE `flag_secret`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `flag` (`flag`);
+  ADD KEY `code` (`code`);
 
 --
 -- Index pour la table `ops`
@@ -67,9 +76,9 @@ ALTER TABLE `ops`
 --
 
 --
--- AUTO_INCREMENT pour la table `flag_secret`
+-- AUTO_INCREMENT pour la table `users`
 --
-ALTER TABLE `flag_secret`
+ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
