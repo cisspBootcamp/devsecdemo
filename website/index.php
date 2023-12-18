@@ -1,5 +1,5 @@
 <?php 
-$bdd = mysqli_connect("localhost","root","","demobd") or die("Not connected MYSQL");
+$bdd = mysqli_connect("localhost","demo","mypassword","demobd") or die("Not connected MYSQL");
 ?>
 
 <html>
