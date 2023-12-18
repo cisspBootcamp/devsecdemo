@@ -1,25 +1,36 @@
-# Utilisez une image de base Ubuntu
+# Utiliser l'image Ubuntu 20.04 comme base
 FROM ubuntu:20.04
 
-# Mettez ‡ jour le systËme et installez les paquets nÈcessaires
-RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    apache2 \
-    mysql-server \
-    php libapache2-mod-php php-mysql
+# Mettre √† jour les paquets disponibles
+RUN apt-get update
+
+# Installer Apache2
+RUN apt-get install -y apache2
+
+# Installer PHP
+RUN apt-get install -y php libapache2-mod-php php-mysql
+
+# Installer MySQL
+RUN apt-get install -y mysql-server
 
 # Copiez le fichier SQL dans le conteneur
-COPY bd.sql /docker-entrypoint-initdb.d/
+COPY bd.sql /var/www
 
-# Configurez MySQL pour accepter les connexions distantes (‡ des fins de dÈmonstration uniquement)
-RUN sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/mysql.conf.d/mysqld.cnf
+# Configurer MySQL (note: ceci est tr√®s basique et non s√©curis√©, √† des fins de d√©monstration uniquement)
+RUN sed -i 's/bind-address.*/bind-address = 0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf && \
+    service mysql start && \
+    mysql -e "source /var/www/bd.sql;" && \
+    mysql -e "CREATE USER 'demo'@'localhost' IDENTIFIED BY 'mypassword';" && \
+    mysql -e "GRANT ALL PRIVILEGES ON demobd.* TO 'demo'@'localhost';" && \
+    mysql -e "FLUSH PRIVILEGES;"
 
-# Exposez les ports nÈcessaires (80 pour Apache2, 3306 pour MySQL)
+# Exposer les ports n√©cessaires (80 pour Apache, 3306 pour MySQL)
 EXPOSE 80
 EXPOSE 3306
 
-# Copiez le site web dans le rÈpertoire Apache2
+# Copiez le site web dans le r√©pertoire Apache2
 COPY website /var/www/html
 
-# DÈmarrez les services Apache2 et MySQL au dÈmarrage du conteneur
-CMD service apache2 start && service mysql start && tail -f /dev/null     
+# Commande pour d√©marrer Apache2 en arri√®re-plan
+CMD ["apachectl", "-D", "FOREGROUND"]
+
