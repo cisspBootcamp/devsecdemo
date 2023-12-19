@@ -5,7 +5,7 @@ $bdd = mysqli_connect("localhost","demo","mypassword","demobd") or die("Not conn
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>CISSP-BootCamp</title>
+<title>CISSP BootCamp 01title>
 <style type="text/css">
 div#container
 {
