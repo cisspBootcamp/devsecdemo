@@ -6,7 +6,6 @@ RUN apt-get update
 
 # Demarrer Apache2
 RUN update-rc.d apache2 defaults
-RUN service apache2 start
 
 # Demarrer MySQL
 RUN service mysql start 
