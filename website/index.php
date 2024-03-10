@@ -5,7 +5,7 @@ $bdd = mysqli_connect("localhost","demo","mypassword","demobd") or die("Not conn
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>CISSP BootCamp 01title>
+<title>CISSP BootCamp 01<title>
 <style type="text/css">
 div#container
 {
@@ -46,7 +46,7 @@ a:hover
 <a href="#" onmouseover="ShowObjectWithEffect('bv_Image1', 1, 'puff', 500);return false;"><img src="images/287f7c337c578f74bd6be4089a1b1b7c.png" id="Image1" alt="" align="top" border="0" style="width:147px;height:174px;"></a></div>
 <div id="bv_Text1" style="margin:0;padding:0;position:absolute;left:262px;top:31px;width:372px;height:86px;text-align:left;z-index:4;">
 <font style="font-size:43px" color="#000000" face="Candara"><b>Boot</b></font><font style="font-size:43px" color="#004993" face="Candara"><b>Camp</b></font><font style="font-size:29px" color="#000000" face="Arial"><b><br>
-</b>OPERATIONS PORTAL</font></div>
+</b>OPERATIONS PORTAL-BONJOUR</font></div>
 <div id="Layer1" style="position:absolute;background-color:#AEE4FF;left:263px;top:139px;width:418px;height:150px;z-index:5" title="">
 <form action="index.php" method="GET">
 <input type="submit" id="Button1" name="submit" value="Open" style="position:absolute;left:276px;top:105px;width:120px;height:32px;font-family:Arial;font-size:13px;z-index:0">
