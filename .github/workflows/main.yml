@@ -23,4 +23,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: cisspbootcamp/devsecdemo:v0.2
+          tags: cisspbootcamp/labgit
